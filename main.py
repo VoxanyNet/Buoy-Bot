@@ -16,7 +16,9 @@ if os.path.exists("token.txt") != True:
         pass
 
 with open("token.txt", "r") as file:
-    TOKEN = file.readline(0)
+    TOKEN = file.read()
+
+    print(f"TOKEN: {TOKEN}")
 
     if TOKEN == "":
         raise NoTokenError("\n\nYou did not supply a token in the token.txt file.\nInstructions for making a bot can be found here: https://discordpy.readthedocs.io/en/stable/discord.html")
